@@ -9,3 +9,15 @@ const menu = document.querySelector("#menu");
 const about = document.querySelector("#about");
 
 loadHome(content);
+
+home.addEventListener("click", () => {
+    loadHome(content);
+});
+
+menu.addEventListener("click", () => {
+    loadMenu(content);
+});
+
+about.addEventListener("click", () => {
+    loadAbout(content);
+});
