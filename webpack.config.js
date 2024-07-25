@@ -8,9 +8,21 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [
-    HtmlWebpackPlugin({
+    new HtmlWebpackPlugin({
         template: './src/index.html',
         inject: 'head',
     }),
   ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
+    ],
+  },
 };
